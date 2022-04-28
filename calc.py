@@ -1,3 +1,5 @@
+import math #do logarytmu
+
 #kolejka potrzebna do przechowywania ostatnich 10 dzialan
 class Queue(object):
     #konstruktor inicjalizuje pusta liste
@@ -42,3 +44,19 @@ def pot(podstawa, wykladnik):
 
 def nth_root(num ,n):
     return num**(1/n)
+
+def logarytm(podstawa, arg):
+    b = arg.real
+    a = podstawa.real
+    if (a > 0 and a != 1) and b > 0:
+        return math.log(arg.real, podstawa.real)
+    else:
+        print('Liczby z poza dziedziny logarytmu!')
+
+def calc(operator, arg1, arg2):    
+    current_operation = operators[operator]
+    return current_operation(arg1, arg2)
+
+
+
+operators = {'1' : add, '2' : sub,'3' : mul, '4' : div, '5' : pot, '6' : nth_root, '7' : logarytm}
