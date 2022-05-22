@@ -60,3 +60,45 @@ def calc(operator, arg1, arg2):
 
 
 operators = {'1' : add, '2' : sub,'3' : mul, '4' : div, '5' : pot, '6' : nth_root, '7' : logarytm}
+
+if __name__ == '__main__':
+    try:
+        operators = {'1' : add, '2' : sub,'3' : mul, '4' : div, '5' : pot, '6' : nth_root, '7' : logarytm}
+        #str_operators = {'1' : '+', '2' : '-','3' : '*', '4' : '/', '5' : '^', '6' : '^1/'}
+        store = Queue()
+        print('\n------------------------------\n'+
+        'Witaj w poteznym kalkulatorze TS, zostaniesz poproszony o wybor dzialnia ' +
+        'oraz podanie argumrtow dzialnia.\nLiczby zespolone nalezy wpisywac w formacie X+Yj!\n'+
+        '------------------------------\n')
+        while True:
+            #Przyjmowanie danych od uzytkownika
+            operator = input('Wybierz dzialanie +(1) -(2) *(3) /(4) ^(5) \u221A(6) log(7): ')
+            #wyprowadzenie argumentow         
+            arg1 = input('Podaj 1 arg: ')  
+            arg2 = input('Podaj 2 arg: ')
+
+            #dodanie do kolejki wyniku
+            solution = calc(operator, arg1, arg2)
+            if store.size_of() == 10:
+                store.dequeue()
+                store.enqueue(solution)
+            else:
+                store.enqueue(solution)
+
+            #podanie wyniku i pytanie o czyszczenie pamieci
+            print('Wynik:', end = " ")
+            print(solution)
+            read = input('Czy chcesz zobaczyc historie dzialan? Y/N ')
+            if read == 'Y':
+                clear = input('Czy chcesz wyczyscic CALA pamiec? Y/N ')
+                if clear == 'Y':
+                    store.operations = []
+                    print('Pamiec wyczyszczona! ')
+                elif clear == 'N':
+                    print('Ostatniew dzialania to... ')
+                    for idx, sol in enumerate(store):
+                        print(f'{idx+1}.', end = " ")
+                        print(sol)
+                        
+    except KeyboardInterrupt:
+        print("Wyjscie z programu")
