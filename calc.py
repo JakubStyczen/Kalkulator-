@@ -116,6 +116,15 @@ def validatioInputString(input_string, expression):
         variable = input(input_string)
     return variable
 
+###FUNCKJE do formatowania wypisywania liczb 
+
+def printForm(sol):
+    if sol.imag == 0:
+        print(f'{sol.real:.4f}')
+    elif sol.real == 0:
+        print(f'{sol.imag:.4f}j')
+    else:
+        print(f'{sol:.4f}')
 
 operators = {'1' : add, '2' : sub,'3' : mul, '4' : div, '5' : pot, '6' : nth_root, '7' : logarytm}
 
