@@ -11,7 +11,7 @@ pattern = re.compile(r'(^[-]?\d+\.?\d*[+-]\d+\.?\d*j$|^[-]?\d+\.?\d*j?$)')
 
 #testy to powyzszego regex
 
-test = '''
+'''test = 
 -2
 2-2j
 -2-2j
@@ -32,13 +32,13 @@ test = '''
 j
 asdas
 sad+sad
-'''
+
 raw = test.split('\n')
 matches = pattern.match(test)
 for match in raw:
    if pattern.match(match):
        print(match)
-
+'''
 
 
 
@@ -208,7 +208,8 @@ if __name__ == '__main__':
                     for idx, sol in enumerate(store):
                         print(f'{idx+1}.', end = " ")
                         printForm(sol)
-                        
-    except KeyboardInterrupt:
-        print("Wyjscie z programu")
 
+    except KeyboardInterrupt:
+        print("\nWyjscie z programu\n")
+    except OverflowError:
+        print("\nZbyt duży format liczb. Nasz przepotężny kalkulator nie obsługuje aż takich :)\n")
