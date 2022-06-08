@@ -175,14 +175,15 @@ if __name__ == '__main__':
                 print("Nie dziel przez 0!!!") if operator == '4' else print("Pierwiastek nie może być stopnia 0!!!") 
                 arg2 = complex(isValidDigit('Podaj 2 arg: ', pattern))
 
-
-            while operator == '7' and not (arg1.real > 0 and arg1.real != 1) and arg2.real <= 0:
+            while operator == '7' and (not (arg1.real > 0 and arg1.real != 1) or arg2.real <= 0):
                 if not (arg1.real > 0 and arg1.real != 1):
                     print("Podstawa musi być dodatnia i różna od 1!!!")
                     arg1 = complex(isValidDigit('Podaj 1 arg: ', pattern))
+                    arg2 = complex(isValidDigit('Podaj 2 arg: ', pattern))
                 else:
                     print("Liczba logarytmowana musi być dodatnia!!!")
-                    arg2 = complex(isValidDigit('Podaj 1 arg: ', pattern))
+                    arg1 = complex(isValidDigit('Podaj 1 arg: ', pattern))
+                    arg2 = complex(isValidDigit('Podaj 2 arg: ', pattern))
 
 
 
