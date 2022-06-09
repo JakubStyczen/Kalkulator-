@@ -205,7 +205,7 @@ if __name__ == '__main__':
                     store.operations = []
                     print('Pamiec wyczyszczona! ')
                 elif clear == 'N':
-                    print('Ostatniew dzialania to... ')
+                    print('Ostatnie dzialania to... ')
                     for idx, sol in enumerate(store):
                         print(f'{idx+1}.', end = " ")
                         printForm(sol)
