@@ -151,7 +151,7 @@ if __name__ == '__main__':
             ans1, ans2  = None, None
             #wybor wynikow do uzywanych argumentow
             if store.size_of() > 0:
-                prev = validatioInputString('Czy chcesz użyc poprzecnich wynikow? Y/N ', ['Y', 'N'])
+                prev = validatioInputString('Czy chcesz użyc poprzednich wynikow? Y/N ', ['Y', 'N'])
                 if prev == 'Y':
                     for idx, sol in enumerate(store):
                         print(f'{idx+1}.', end = " ")
