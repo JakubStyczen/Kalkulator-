@@ -140,8 +140,8 @@ if __name__ == '__main__':
         #str_operators = {'1' : '+', '2' : '-','3' : '*', '4' : '/', '5' : '^', '6' : '^1/'}
         store = Queue()
         print('\n------------------------------\n'+
-        'Witaj w poteznym kalkulatorze TS, zostaniesz poproszony o wybor dzialnia ' +
-        'oraz podanie argumrtow dzialnia.\nLiczby zespolone nalezy wpisywac w formacie X+Yj!\n'+
+        'Witaj w poteznym kalkulatorze TS, zostaniesz poproszony o wybor dzialania ' +
+        'oraz podanie argumentow dzialania.\nLiczby zespolone nalezy wpisywac w formacie X+Yj!\n'+
         'CTRL + C aby wyjść\n'+
         '------------------------------\n')
         while True:
